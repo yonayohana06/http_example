@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http_example/models/product_model.dart';
+import 'package:http_example/widgets/rating_product.dart';
 import 'package:http_example/widgets/string_extension.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class ProductDetail extends StatelessWidget {
   const ProductDetail({super.key, required this.product});
@@ -65,6 +65,7 @@ class ProductDetail extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               '\$ $priceDiscount',
@@ -84,19 +85,21 @@ class ProductDetail extends StatelessWidget {
                               ),
                             ),
                             const Spacer(),
-                            const Icon(
-                              MdiIcons.star,
-                              size: 24.0,
-                              color: Colors.orange,
-                            ),
-                            const SizedBox(width: 4.0),
-                            Text(
-                              product.rating.toString(),
-                              style: const TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                RatingProduct(
+                                  rating: product.rating.toDouble(),
+                                ),
+                                Text(
+                                  product.rating.toString(),
+                                  style: const TextStyle(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
                         const SizedBox(height: 12.0),

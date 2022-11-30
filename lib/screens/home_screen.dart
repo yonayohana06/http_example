@@ -75,116 +75,113 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Card(
                   elevation: 2,
                   clipBehavior: Clip.antiAlias,
-                  child: SizedBox(
-                    width: 160.0,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 160,
-                          width: 160,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                product.thumbnail,
-                              ),
-                              fit: BoxFit.cover,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 160,
+                        width: 160,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              product.thumbnail,
                             ),
-                            color: Colors.cyan[400],
+                            fit: BoxFit.cover,
                           ),
-                          child: Stack(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(6.0),
-                                margin: const EdgeInsets.all(8.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.red[800],
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(
-                                      12.0,
-                                    ),
-                                  ),
-                                ),
-                                child: Text(
-                                  "Discount ${product.discountPercentage}%",
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 8.0,
+                          color: Colors.cyan[400],
+                        ),
+                        child: Stack(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(6.0),
+                              margin: const EdgeInsets.all(8.0),
+                              decoration: BoxDecoration(
+                                color: Colors.red[800],
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(
+                                    12.0,
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
+                              child: Text(
+                                "Discount ${product.discountPercentage}%",
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 8.0,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                product.title,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              product.title,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.bold,
                               ),
-                              const SizedBox(height: 6.0),
-                              // Row(
-                              //   crossAxisAlignment: CrossAxisAlignment.center,
-                              //   children: [
-                              //     const Text(
-                              //       "Rating",
-                              //       style: TextStyle(
-                              //         fontSize: 10.0,
-                              //       ),
-                              //     ),
-                              //     const SizedBox(width: 4.0),
-                              //     const Icon(
-                              //       Icons.circle,
-                              //       size: 4.0,
-                              //     ),
-                              //     const SizedBox(width: 4.0),
-                              //     Icon(
-                              //       Icons.star,
-                              //       color: Colors.orange[400],
-                              //       size: 16.0,
-                              //     ),
-                              //     Text(
-                              //       product.rating.toString(),
-                              //       style: const TextStyle(
-                              //         fontSize: 10.0,
-                              //       ),
-                              //     ),
-                              //   ],
-                              // ),
-                              const SizedBox(height: 6.0),
-                              Text(
-                                product.brand,
-                                style: const TextStyle(
-                                  color: Colors.blueGrey,
-                                  fontSize: 10.0,
-                                ),
+                            ),
+                            const SizedBox(height: 6.0),
+                            // Row(
+                            //   crossAxisAlignment: CrossAxisAlignment.center,
+                            //   children: [
+                            //     const Text(
+                            //       "Rating",
+                            //       style: TextStyle(
+                            //         fontSize: 10.0,
+                            //       ),
+                            //     ),
+                            //     const SizedBox(width: 4.0),
+                            //     const Icon(
+                            //       Icons.circle,
+                            //       size: 4.0,
+                            //     ),
+                            //     const SizedBox(width: 4.0),
+                            //     Icon(
+                            //       Icons.star,
+                            //       color: Colors.orange[400],
+                            //       size: 16.0,
+                            //     ),
+                            //     Text(
+                            //       product.rating.toString(),
+                            //       style: const TextStyle(
+                            //         fontSize: 10.0,
+                            //       ),
+                            //     ),
+                            //   ],
+                            // ),
+                            const SizedBox(height: 6.0),
+                            Text(
+                              product.brand,
+                              style: const TextStyle(
+                                color: Colors.blueGrey,
+                                fontSize: 10.0,
                               ),
-                              Text(
-                                product.category.toCapitalized(),
-                                style: const TextStyle(
-                                  fontSize: 10.0,
-                                ),
+                            ),
+                            Text(
+                              product.category.toCapitalized(),
+                              style: const TextStyle(
+                                fontSize: 10.0,
                               ),
-                              const SizedBox(height: 20),
-                              Text(
-                                '\$ ${product.price.toString()}',
-                                style: const TextStyle(
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              '\$ ${product.price.toString()}',
+                              style: const TextStyle(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.bold,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               );
